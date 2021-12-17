@@ -23,11 +23,8 @@ Requirements:
 2. npm start
 
 Environment Variables:
-Please review the ``env.sample`` file and **edit the values to include the integration client_id and secret from the Getting Started step.**  If you used a different redirect_uri or scopes from the Getting Started step, then you'll need to edit those values here as well, or set them as environment variables via your preferred method.  For example, you can run the following in a unix terminal to set the environment variables in that local terminal window:<br>
- ``>>>username$ source sample_environ_vars.sh``
+Please review the ``env.sample`` file and **edit the values to include the integration client_id and secret from the Getting Started step.**  If you used a different redirect_uri or scopes from the Getting Started step, then you'll need to edit those values here as well, or set them as environment variables via your preferred method. Then rename the ``env.sample`` to ``.env`` and run the app using ``npm start``
  
-Running the App from the terminal:<br>
-``>>>username$ python app.py --debug``
 
 
 # About the App
