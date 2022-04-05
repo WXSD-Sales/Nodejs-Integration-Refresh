@@ -1,4 +1,4 @@
-# Nodejs-Integration-Refresh
+# Nodejs Integration Refresh
 
 This is a Node.js example on how to generate an integrations access token for Cisco Webex and continually refresh it. This then allows you to use the access token to perform integration tasks against your Webex Org.
 
