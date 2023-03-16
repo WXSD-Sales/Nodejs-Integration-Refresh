@@ -1,0 +1,18 @@
+md-block {
+  white-space: pre;
+  font-family: monospace;
+}
+
+pre {
+  border-radius: 0.75rem;
+  font-size: 0.85rem !important;
+}
+
+#notification {
+  width: 30rem;
+  display: block;
+  position: absolute;
+  z-index: 1;
+  right: 0;
+  bottom: 0;
+}

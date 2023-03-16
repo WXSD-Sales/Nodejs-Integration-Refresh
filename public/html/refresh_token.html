@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Refresh Token Integration</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+  <script type="module" src="https://md-block.verou.me/md-block.js"></script>
+  <script src="lib/js/prism.js"></script>
+  <link rel="stylesheet" href="lib/css/prism.css">
+</head>
+
+<body>
+  <section class="section p-2">
+    <div class="container" style="max-width: 100%">
+      <section class="hero is-info">
+        <div class="hero-body">
+          <p class="title">
+            Webex Refresh Token Integration
+          </p>
+          <p class="subtitle">
+            Where you no longer need to re-login!
+          </p>
+        </div>
+      </section>
+      <section class="section">
+        <div class="tile is-ancestor">
+          <div class="tile is-child  is-vertical p-0 is-12">
+            <div class="columns">
+              <div class="column ">
+                <div class="box notification is-danger">
+                  <h1 class="subtitle is-size-4">Webex Meeting API Request</h1>
+                  <md-block>
+                    ```javascript
+                    https://webexapis.com/v1/meetings
+                    ```
+                  </md-block>
+                  <md-block>
+                    ```javascript
+                    "start": "2023-03-16T11:30:00", //required
+                    "end": "0223-03-16T12:30:00", //required
+                    "timezone": "America/Los_Angeles", //Optional
+                    "enabledAutoRecordMeeting": true, //Optional
+                    "enableAutomaticLock": false, //Optional - must be disabled
+                    "allowAnyUserToBeCoHost": true, //Optional - must be enabled
+                    "title": "Incident NC102032"
+                    ```
+                  </md-block>
+                </div>
+              </div>
+              <div class="column">
+                <div class="box notification is-primary">
+                  <h1 class="subtitle is-size-4">Webex Meeting API Response</h1>
+                  <md-block rendered="content">
+                    <pre class="language-javascript p-0 pl-4 mb-0" style="white-space: pre-line;">
+                      <div >
+                    <span class="token string-property property">"title"</span><span class="token operator">:</span> <span class="token string" id="title">"Undefined"</span><span class="token punctuation">,</span>
+                    <span class="token string-property property">"sipAddress"</span><span class="token operator">:</span> <span class="token string" id="sipAddress">"Undefined"</span><span class="token punctuation">,</span>
+                    <span class="token string-property property">"siteUrl"</span><span class="token operator">:</span> <span class="token string" id="siteUrl">"Undefined"</span><span class="token punctuation">,</span>
+                    <span class="token string-property property">"webLink"</span><span class="token operator">:</span> <span class="token string" id="webLink">"Undefined"</span><span class="token punctuation">,</span>
+                    <span class="token string-property property">"hostEmail"</span><span class="token operator">:</span> <span class="token string" id="hostEmail">"Undefined"</span><span class="token punctuation">,</span>
+                    <span class="token string-property property">"hostKey"</span><span class="token operator">:</span> <span class="token string" id="hostKey">"Undefined"</span><span class="token punctuation">,</span>
+                    <span class="token string-property property">"start"</span><span class="token operator">:</span> <span class="token string" id="start">"Undefined"</span>
+                    <span class="token string-property property">"end"</span><span class="token operator">:</span> <span class="token string" id="end">"Undefined"</span>
+                      </div>
+                    </pre>
+                  </md-block>
+                </div>
+              </div>
+            </div>
+            <div class="tile is-vertical is-12">
+              <div class="box">
+                <table class="table is-fullwidth " id="table">
+                  <thead>
+                    <tr>
+                      <th>Property</th>
+                      <th>Value</th>
+                      <div id="clockdiv" class="is-flex is-justify-content-flex-end">
+                        <div>
+                          <span class="days"></span> :
+                          <span class="hours"></span> :
+                          <span class="minutes"></span> :
+                          <span class="seconds"></span>
+                        </div>
+                      </div>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <th>Access Token</th>
+                      <td>
+                        <%= access_token %>
+                      </td>
+                    </tr>
+                    <tr>
+                      <th>Refresh Token</th>
+                      <td>
+                        <%= refresh_token %>
+                      </td>
+                    </tr>
+                    <tr>
+                      <th>Access Token Expiration Date</th>
+                      <td>
+                        <%= access_token_expiration_date %>
+                      </td>
+                    </tr>
+                    <tr>
+                      <th>Refresh Token Expiration Date</th>
+                      <td>
+                        <%= refresh_token_expiration_date %>
+                      </td>
+                    </tr>
+                    <tr>
+                      <th>Scope</th>
+                      <td>
+                        <%= scope %>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="section pt-0 pb-6 is-flex is-justify-content-flex-end">
+        <button onclick="runRequest()" class="button is-rounded is-medium is-warning" id="button">Run</button>
+      </section>
+    </div>
+  </section>
+
+  </div>
+  </div>
+  <div class="notification m-2 is-danger is-hidden" id="notification">
+    <button onclick="removeNotification()" class="delete"></button>
+    <span id="notification-content"></span>
+  </div>
+</body>
+
+</html>
+
+<link rel="stylesheet" href="css/main.css">
+<script src="js/client.js"></script>
