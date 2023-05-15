@@ -1,4 +1,4 @@
-# Nodejs Integration Refresh
+# Node.js Integration Refresher
 
 This is a Node.js example on how to generate an integrations access token for Cisco Webex and continually refresh it. This then allows you to use the access token to perform integration tasks against your Webex Org.
 
@@ -32,9 +32,27 @@ Once the app is running...
 1. Navigate to https://localhost:3000/oauth in your browser (your redirect_uri, which should end in oauth for this demo).
 2. Sign into your integration with a valid Webex Teams account.<br>
    a. You will be redirected back to your local app server.<br>
-3. You app will now refresh the token using a cron job everyday at midnight. You can always modify the code to use the time remaining for the access token expiry time to calculate the best time to refresh the toke for your Webex Org settings.
+3. You app will now refresh the token using a cron job every day at midnight. You can always modify the code to use the time remaining for the access token expiry time to calculate the best time to refresh the toke for your Webex Org settings.
 
 # Developer Info
-1. In thea app.js file is a commented explanation about how to test the refresh right at app start.
+1. In the app.js file is a commented explanation about how to test the refresh right at app start.
 2. This demo prints sensitive information like access tokens to the terminal.  This is not advised for a real application.
 3. This demo stores tokens in app memory, which is not helpful if the application is restarted.  For this reason, a database would be recommended instead.
+
+
+## Demo
+
+*For more demos & PoCs like this, check out our [Webex Labs site](https://collabtoolbox.cisco.com/webex-labs).
+
+## License
+
+All contents are licensed under the MIT license. Please see [license](LICENSE) for details.
+
+
+## Disclaimer
+  
+Everything included is for demo and Proof of Concept purposes only. Use of the site is solely at your own risk. This site may contain links to third party content, which we do not warrant, endorse, or assume liability for. These demos are for Cisco Webex use cases, but are not Official Cisco Webex Branded demos.
+
+
+## Questions
+Please contact the WXSD team at [wxsd@external.cisco.com](mailto:wxsd@external.cisco.com?subject=nodejs-integration-refresher) for questions. Or, if you're a Cisco internal employee, reach out to us on the Webex App via our bot (globalexpert@webex.bot). In the "Engagement Type" field, choose the "API/SDK Proof of Concept Integration Development" option to make sure you reach our team. 
