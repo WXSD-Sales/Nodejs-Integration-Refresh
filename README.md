@@ -2,7 +2,7 @@
 
 This is a Node.js example on how to generate an integrations access token for Cisco Webex and continually refresh it. This then allows you to use the access token to perform integration tasks against your Webex Org.
 
-# Overview
+## Overview
 
 This project creates a locally running Node.js web server which lets you sign using a Webex Integration OAuth redirect URL flow. It then sets up a cron job to continually refresh the access token. In example, the project refreshes the token ever 24 hours.
 
